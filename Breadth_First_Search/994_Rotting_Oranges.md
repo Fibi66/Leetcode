@@ -1,6 +1,8 @@
 # 994. Rotting Oranges
 
-**刷题日期**: 2025-11-20
+**刷题日期**: 2025-11-20, 2025-12-07
+
+**复习次数**: 2
 
 **难度**: Medium
 
@@ -17,6 +19,11 @@
 1. 初始化：把所有腐烂橙子入队，并统计 fresh 橙子数量
 2. BFS 多源扩散
 3. 一定要计数 fresh，因为有一个 test case 是 [0]，如果不计数这个 case 过不去
+
+**2025-12-07 复习心得**:
+- after first round, go through the queue
+- Check if any fresh orange remains
+- edge case: 如果格子里没有橘子，返回 0，而不是 -1
 
 ## 代码
 
