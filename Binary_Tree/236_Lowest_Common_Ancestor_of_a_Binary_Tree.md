@@ -1,6 +1,8 @@
 # 236. Lowest Common Ancestor of a Binary Tree
 
-**刷题日期**: 2025-11-20
+**刷题日期**: 2025-11-20, 2025-12-06
+
+**复习次数**: 2
 
 **难度**: Medium
 
