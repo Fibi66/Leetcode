@@ -1,6 +1,8 @@
 # 33. Search in Rotated Sorted Array
 
-**刷题日期**: 2025-12-06
+**刷题日期**: 2025-12-06, 2025-12-07
+
+**复习次数**: 2
 
 **难度**: Medium
 
@@ -15,6 +17,10 @@
 - `nums[mid] > nums[r]` 就是左边有序，否则右边有序
 - 左边有序，判断 target 在不在 [l, mid) 里
 - 右边有序，判断 target 在不在 (mid, r] 里
+
+**2025-12-07 复习心得**:
+- sorted 在左：`nums[mid] > target && nums[l] <= target` 时搜左边
+- sorted 在右：`nums[mid] < target && nums[r] >= target` 时搜右边
 
 ## 代码
 
