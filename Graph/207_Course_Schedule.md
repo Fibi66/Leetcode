@@ -5,6 +5,7 @@
 **复习记录**:
 - 第 2 次: 2025-12-02
 - 第 3 次: 2025-12-04
+- 第 4 次: 2025-12-07
 
 **难度**: Medium
 
@@ -13,6 +14,16 @@
 ## 题目截图
 
 ![207_Course_Schedule](207_Course_Schedule.png)
+
+## 解题心得
+
+**2025-12-07 复习心得**:
+- 需要 queue, map, int[] indegree
+- indegree = map init
+- go over indegree to check whether we have 0，入度为 0 的先入队
+- go queue，遍历队列进行拓扑排序
+- important to notice the null：`topList != null && i < topList.size()`
+- check indegree int[]，最后检查是否所有入度都为 0
 
 ## 代码
 
