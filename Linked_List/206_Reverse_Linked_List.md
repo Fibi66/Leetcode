@@ -12,9 +12,10 @@
 
 ## 解题心得
 
-- 难点1: prev 先指向 null，第一个 node 才能断开
-- 难点2: 循环条件是 cur，而不是 cur.next
-- 难点3: 返回的是 prev，cur 现在是 null
+- **难点1**: prev 先指向 null，第一个 node 才能断开
+- **难点2**: 循环条件是 cur，而不是 cur.next
+- **难点3**: 返回的是 prev，cur 现在是 null
+- **难点4**: 一定要记住 temp！先保存 cur.next，不然断链后就找不到下一个节点了！
 
 ## 代码
 
