@@ -1,8 +1,8 @@
 # 22. Generate Parentheses
 
-**刷题日期**: 2025-11-23, 2025-12-04
+**刷题日期**: 2025-11-23, 2025-12-04, 2025-12-07
 
-**复习次数**: 2
+**复习次数**: 3
 
 **难度**: Medium
 
@@ -16,6 +16,9 @@
 
 - 回溯的条件只要保留 `open > 0` 和 `close > open` 就好
 - StringBuilder 删除字符的 API 要记牢：`sb.deleteCharAt(sb.length() - 1)`
+
+**2025-12-07 复习心得**:
+- 这个条件记住一下，是 close 大于 open 你懂吧？`if (close > open)`
 
 ## 代码
 
