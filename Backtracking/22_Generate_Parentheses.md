@@ -1,27 +1,26 @@
 # 22. Generate Parentheses
 
-**刷题日期**: 2025-11-23, 2025-12-04, 2025-12-07
+**Date**: 2025-11-23, 2025-12-04, 2025-12-07
 
-**复习次数**: 3
+**Times Reviewed**: 3
 
-**难度**: Medium
+**Difficulty**: Medium
 
-**标签**: String, Backtracking
+**Tags**: String, Backtracking
 
-## 题目截图
+## Problem Screenshot
 
 ![22. Generate Parentheses](22_Generate_Parentheses.png)
 
-## 解题心得
+## Notes
 
-- 回溯的条件只要保留 `open > 0` 和 `close > open` 就好
-- StringBuilder 删除字符的 API 要记牢：`sb.deleteCharAt(sb.length() - 1)`
+- For backtracking, just keep two conditions: `open > 0` and `close > open`
+- Remember the StringBuilder API to delete a character: `sb.deleteCharAt(sb.length() - 1)`
 
-**2025-12-07 复习心得**:
-- 这个条件记住一下，是 close 大于 open 你懂吧？`if (close > open)`
+**2025-12-07 Review**:
+- Remember this condition — it's close greater than open: `if (close > open)`
 
-## 代码
-
+## Code
 ```java
 class Solution {
     List<String> res = new ArrayList<>();
@@ -38,13 +37,13 @@ class Solution {
             res.add(sb.toString());
         }
 
-        if (open > 0) { //只要保留这个条件就好
+        if (open > 0) { // just need this condition
             sb.append('(');
             backtracking(sb, open - 1, close);
-            sb.deleteCharAt(sb.length() - 1); //sb 删除的api要记牢
+            sb.deleteCharAt(sb.length() - 1); // remember this API
         }
 
-        if (close > open) { //只要保留这个条件就好
+        if (close > open) { // just need this condition
             sb.append(')');
             backtracking(sb, open, close - 1);
             sb.deleteCharAt(sb.length() - 1);
@@ -53,9 +52,9 @@ class Solution {
 }
 ```
 
-## 复杂度分析
+## Complexity Analysis
 
-- **时间复杂度**: O(4^n / √n) - 第 n 个卡特兰数的渐近复杂度
-- **空间复杂度**: O(n) - 递归栈的深度为 2n，StringBuilder 最大长度为 2n
+- **Time Complexity**: O(4^n / √n) - asymptotic bound of the nth Catalan number
+- **Space Complexity**: O(n) - recursion stack depth is 2n, StringBuilder max length is 2n
 
 ---
