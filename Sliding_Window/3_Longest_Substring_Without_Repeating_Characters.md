@@ -1,6 +1,8 @@
 # 3. Longest Substring Without Repeating Characters
 
-**刷题日期**: 2025-11-21
+**刷题日期**: 2025-11-21, 2026-02-16
+
+**复习次数**: 2
 
 **难度**: Medium
 
