@@ -4,7 +4,9 @@
 
 **难度**: Easy
 
-**标签**: Array, Dynamic Programming
+**复习次数**: 2
+
+**标签**: Array, Dynamic Programming, Greedy
 
 ## 题目截图
 
@@ -42,5 +44,34 @@ class Solution {
 
 - **时间复杂度**: O(n) - 遍历一次价格数组
 - **空间复杂度**: O(n) - 使用了 n×2 的二维 DP 数组
+
+## 解法二：贪心
+
+### 解题心得
+
+- 贪心思路：遍历数组，维护当前最低价格 `minPrice`，每一步计算当前价格与最低价格的差值，更新最大利润
+- 比 DP 解法更简洁，空间复杂度优化为 O(1)
+
+### 代码
+
+```java
+class Solution {
+    public int maxProfit(int[] prices) {
+        //贪心
+        int minPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
+        for (int price : prices) {
+            minPrice = Math.min(minPrice, price);
+            maxProfit = Math.max(maxProfit, price - minPrice);
+        }
+        return maxProfit;
+    }
+}
+```
+
+### 复杂度分析
+
+- **时间复杂度**: O(n) - 遍历一次价格数组
+- **空间复杂度**: O(1) - 只使用了两个变量
 
 ---
