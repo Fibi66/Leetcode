@@ -4,7 +4,7 @@
 
 **难度**: Easy
 
-**复习次数**: 2
+**复习次数**: 3
 
 **标签**: Array, Dynamic Programming, Greedy
 
@@ -15,8 +15,9 @@
 ## 解题心得
 
 - 使用二维 DP 数组，`dp[i][0]` 表示第 i 天持有股票的最大利润，`dp[i][1]` 表示第 i 天不持有股票的最大利润
-- 买入或不买入：`dp[i][0] = Math.max(dp[i-1][0], -prices[i])`
-- 卖出或不卖出：`dp[i][1] = Math.max(dp[i-1][1], dp[i-1][0] + prices[i])`
+- 注意 `dp[i][0]` 这里是 max，并且是 `-prices[i]`，表示第 i 天持有股票时的最大利润
+- 第 i 天持有股票，只有两种情况：昨天就持有了，或者今天才买的
+- 第 i 天不持有股票时的最大利润：`dp[i][1] = Math.max(dp[i-1][1], dp[i-1][0] + prices[i])`
 - 输出二维数组最后一位 `dp[n-1][1]`
 
 ## 代码
@@ -25,16 +26,18 @@
 class Solution {
     public int maxProfit(int[] prices) {
         int n = prices.length;
+        if (n == 1) return 0;
         int[][] dp = new int[n][2];
         dp[0][0] = -prices[0];
         dp[0][1] = 0;
         for (int i = 1; i < n; i++) {
-            //买入或不买入
+            // !这里是max, 并且是-prices[i],表示第i天持有股票时的最大利润
+            // 第i天持有股票，只有两种情况：昨天就持有了，或者今天才买的
             dp[i][0] = Math.max(dp[i-1][0], -prices[i]);
-            // 卖出或不卖出
+
+            // 第i天不持有股票时的最大利润
             dp[i][1] = Math.max(dp[i-1][1], dp[i-1][0] + prices[i]);
         }
-        //输出二维数组最后一位
         return dp[n-1][1];
     }
 }
