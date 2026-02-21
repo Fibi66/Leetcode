@@ -1,6 +1,8 @@
 # 128. Longest Consecutive Sequence
 
-**刷题日期**: 2025-12-12
+**刷题日期**: 2025-12-12, 2026-02-20
+
+**复习次数**: 2
 
 **难度**: Medium
 
@@ -13,6 +15,9 @@
 ## 解题心得
 
 剪枝优化：只从序列的起点开始计数（当 x-1 不在 set 中时），避免重复计算。起始点是1（streak 初始值）。
+
+- 记得从 cur 开始（`set.contains(cur + 1)`），不是从 x 开始
+- 加上 null check：`if (nums == null || nums.length == 0) return 0;`
 
 ## 代码
 
