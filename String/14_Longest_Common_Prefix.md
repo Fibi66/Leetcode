@@ -1,6 +1,8 @@
 # 14. Longest Common Prefix
 
-**刷题日期**: 2025-11-23
+**刷题日期**: 2025-11-23, 2026-02-20
+
+**复习次数**: 2
 
 **难度**: Easy
 
@@ -9,6 +11,10 @@
 ## 题目截图
 
 ![14. Longest Common Prefix](14_Longest_Common_Prefix.png)
+
+## 解题心得
+
+- `substring` 没大写，并且是不包括最后一位
 
 ## 代码
 
