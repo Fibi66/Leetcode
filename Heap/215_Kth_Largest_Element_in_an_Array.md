@@ -1,6 +1,8 @@
 # 215. Kth Largest Element in an Array
 
-**刷题日期**: 2025-12-07
+**刷题日期**: 2025-12-07, 2026-02-22
+
+**复习次数**: 2
 
 **难度**: Medium
 
@@ -15,6 +17,8 @@
 - pq 会把最小的数字排到最上面（小顶堆）
 - 如果我们只把大于 pq 里的数字放进去，top 即使我们要的 kth 大
 - 维护一个大小为 k 的小顶堆，堆顶就是第 k 大的元素
+- 可以用最大堆，但是 time 是 O(n * k log n)，因为最后取 k 次的时候，每次还要走 O(log n)，走 k 次
+- 但是最小堆只用维护 k size，并且 peek 就是答案不需要 for loop 取，所以是 O(n * log k)
 
 ## 代码
 
@@ -22,14 +26,16 @@
 class Solution {
     public int findKthLargest(int[] nums, int k) {
         PriorityQueue<Integer> pq = new PriorityQueue<>();
-        // pq会把最小的数字排到最上面
-        // 如果我们只把大于pq里的数字放进去, top即使我们要的kth 大
-        for (int x : nums) {
-            if (pq.size() < k) pq.offer(x);
-            else {
-                if (x > pq.peek()) {
+        // 可以用最大堆，但是time是O(n * k log n)
+        // 因为最后取k次的时候，每次还要走O(log n)，走k次
+        // 但是最小堆只用维护k size，并且peek就是答案不需要for loop取，所以是O(n * log k)
+        for (int i = 0; i < nums.length; i++) {
+            if (pq.size() < k) {
+                pq.offer(nums[i]);
+            } else {
+                if (nums[i] > pq.peek()) {
                     pq.poll();
-                    pq.offer(x);
+                    pq.offer(nums[i]);
                 }
             }
         }
