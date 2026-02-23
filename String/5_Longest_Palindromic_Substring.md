@@ -1,10 +1,8 @@
 # 5. Longest Palindromic Substring
 
-**刷题日期**: 2025-11-23, 2025-12-05
+**刷题日期**: 2025-11-23, 2025-12-05, 2026-02-22
 
-**复习次数**: 2
-
-**掌握程度**: ⚠️ 还不熟
+**复习次数**: 3
 
 **难度**: Medium
 
@@ -19,6 +17,7 @@
 使用中心扩展法，分别处理奇数长度（odd）和偶数长度（even）的回文串。从每个位置向两边扩展，找到最长的回文子串。
 
 - `s.substring(l, r+1)` 这个 API 还是不熟，要多练习
+- 正确 - 往外扩展，方向别错了（l-- 和 r++）
 
 ## 代码
 
@@ -26,27 +25,27 @@
 class Solution {
     public String longestPalindrome(String s) {
         String res = "";
-        int max = 0;
-
+        int maxDis = 0;
         for (int i = 0; i < s.length(); i++) {
-            //odd
+            // odd
             int l = i, r = i;
             while (l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)) {
-                if (r - l + 1 > max) {
-                    max = r - l + 1;
+                if (r - l + 1 > maxDis) {
+                    maxDis = r - l + 1;
                     res = s.substring(l, r + 1);
                 }
-                r++;l--;
+                // 正确 - 往外扩展，方向别错了
+                l--; r++;
             }
 
-            //even
-            int left = i, right = i+1;
+            // even
+            int left = i, right = i + 1;
             while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
-                if (right - left + 1 > max) {
-                    max = right - left + 1;
+                if (right - left + 1 > maxDis) {
+                    maxDis = right - left + 1;
                     res = s.substring(left, right + 1);
                 }
-                right++;left--;
+                left--; right++;
             }
         }
         return res;
