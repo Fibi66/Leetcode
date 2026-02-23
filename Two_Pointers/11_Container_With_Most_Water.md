@@ -1,6 +1,8 @@
 # 11. Container With Most Water
 
-**刷题日期**: 2025-12-06
+**刷题日期**: 2025-12-06, 2026-02-22
+
+**复习次数**: 2
 
 **难度**: Medium
 
@@ -10,21 +12,27 @@
 
 ![11. Container With Most Water](11_Container_With_Most_Water.png)
 
+## 解题心得
+
+- 贪心，每次只依赖两根柱子
+
 ## 代码
 
 ```java
 class Solution {
     public int maxArea(int[] height) {
+        // 贪心，每次只依赖两根柱子
         int l = 0, r = height.length - 1;
-        int max = 0;
+        int maxWater = 0;
         while (l < r) {
-            max = Math.max(Math.min(height[l], height[r]) * (r - l), max);
-
-            if (height[l] < height[r]) l++;
-            else r--;
+            maxWater = Math.max(Math.min(height[l], height[r]) * (r - l), maxWater);
+            if (height[l] < height[r]) {
+                l++;
+            } else {
+                r--;
+            }
         }
-
-        return max;
+        return maxWater;
     }
 }
 ```
