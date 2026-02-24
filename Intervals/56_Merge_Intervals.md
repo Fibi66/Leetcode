@@ -1,6 +1,8 @@
 # 56. Merge Intervals
 
-**刷题日期**: 2025-12-05
+**刷题日期**: 2025-12-05, 2026-02-23
+
+**复习次数**: 2
 
 **难度**: Medium
 
@@ -17,6 +19,10 @@
 - 遍历时比较当前 interval 的 start 和 res 最后一个的 end
 - return the res using `toArray(<T>Object)`
 - `int[][]` 只用定义前面一个 size
+
+**复习心得 (2026-02-23)**:
+- `Arrays.sort` 要先填个 object，再填 comparator
+- 跟合并后的 last 比
 
 ## 代码
 
