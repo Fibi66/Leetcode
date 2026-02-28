@@ -1,6 +1,8 @@
 # 206. Reverse Linked List
 
-**刷题日期**: 2025-11-21
+**刷题日期**: 2025-11-21, 2026-02-28
+
+**复习次数**: 2
 
 **难度**: Easy
 
@@ -9,6 +11,8 @@
 ## 题目截图
 
 ![206. Reverse Linked List](206_Reverse_Linked_List.png)
+
+![206. Reverse Linked List - Review 2](206_Reverse_Linked_List_review2.png)
 
 ## 解题心得
 
