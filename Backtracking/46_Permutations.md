@@ -1,6 +1,8 @@
 # 46. Permutations
 
-**刷题日期**: 2025-12-07
+**刷题日期**: 2025-12-07, 2026-02-28
+
+**复习次数**: 2
 
 **难度**: Medium
 
@@ -10,11 +12,14 @@
 
 ![46. Permutations](46_Permutations.png)
 
+![46. Permutations - Review 2](46_Permutations_review2.png)
+
 ## 解题心得
 
 - 副本！！又忘记了：`res.add(new ArrayList<>(list));`
 - 撤销！！又忘记了：`list.remove(list.size() - 1);`
 - 用 boolean[] used 数组记录哪些元素已经使用过
+- 递归已经结束了，才执行 seen[i] = false 这行，所以 seen 不影响
 
 ## 代码
 
